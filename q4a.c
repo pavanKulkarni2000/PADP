@@ -15,7 +15,7 @@ double gray(int threads){
     int W=gdImageSX(img);
     int H=gdImageSY(img);
     double t=omp_get_wtime();
-    #pragma omp parallel for collapse(2) num_threads(threads) schedule(dynamic, 1) firstprivate(ptr)
+    #pragma omp parallel for collapse(2) num_threads(threads) schedule(dynamic, 1)
     for(int x=0;x<W;x++)
         for(int y=0;y<H;y++){
             int color=gdImageGetPixel(img,x,y);
